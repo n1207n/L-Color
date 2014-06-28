@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="primaryLightColor" type="color">#4fc3f7</item>
+    <item name="primaryColor" type="color">#03a9f4</item>
+    <item name="primaryDarkColor" type="color">#0288d1</item>
+    <item name="primaryAccentLightColor" type="color">#80d8ff</item>
+    <item name="primaryAccentColor" type="color">#40c4ff</item>
+    <item name="primaryAccentDarkColor" type="color">#00b0ff</item>
+    <item name="backgroundColor" type="color">#FFE8FAFF</item>
+</resources>
