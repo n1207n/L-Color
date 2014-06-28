@@ -12,6 +12,9 @@ import android.view.ViewAnimationUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.ScaleAnimation;
 import android.widget.Toast;
 import android.widget.ViewAnimator;
 
@@ -75,6 +78,9 @@ public class ColorListActivity extends Activity implements ColorListFragment.OnF
         if (add_cv.getVisibility() == View.INVISIBLE) {
             // Make it visible
             add_cv.setVisibility(View.VISIBLE);
+
+//            Animation animation = AnimationUtils.
+
 
             // Create a reveal animator to reveal this
             animator = ViewAnimationUtils.createCircularReveal(add_cv, revealCenterX, revealCenterY, 0, revealRadius);
