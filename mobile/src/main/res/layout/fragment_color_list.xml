@@ -10,10 +10,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@android:id/empty"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center" />
+    <ImageButton
+        android:layout_width="@dimen/floating_button_size"
+        android:layout_height="@dimen/floating_button_size"
+        android:id="@+id/add_ib"
+        android:layout_gravity="right|bottom"
+        android:src="@drawable/add"
+        android:background="@drawable/add_ripple"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="fitCenter"
+        android:padding="10dp"/>
 
 </FrameLayout>
