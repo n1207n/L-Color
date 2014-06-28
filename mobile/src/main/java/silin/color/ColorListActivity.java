@@ -1,19 +1,14 @@
 package silin.color;
 
 import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
+import android.widget.Toast;
 
-import silin.color.R;
+import silin.color.object.Color;
 
-public class ColorListActivity extends Activity {
+public class ColorListActivity extends Activity implements ColorListFragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +17,8 @@ public class ColorListActivity extends Activity {
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
+                                .add(R.id.container, new ColorListFragment())
+                                .commit();
         }
     }
 
@@ -47,19 +42,8 @@ public class ColorListActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_color_list, container, false);
-            return rootView;
-        }
+    @Override
+    public void onColorItemSelected(int position) {
+        Toast.makeText(this, Color.ITEMS.get(position).content, Toast.LENGTH_SHORT).show();
     }
 }
