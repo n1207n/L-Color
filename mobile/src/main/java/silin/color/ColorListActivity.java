@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import silin.color.object.Color;
@@ -46,5 +47,9 @@ public class ColorListActivity extends Activity implements ColorListFragment.OnF
     public void onColorItemSelected(int position) {
         // Toast the content for now
         Toast.makeText(this, Color.ITEMS.get(position).content, Toast.LENGTH_SHORT).show();
+    }
+
+    public void show_add_card_view(View view) {
+        Toast.makeText(this, "Add buttom is clicked", Toast.LENGTH_SHORT).show();
     }
 }

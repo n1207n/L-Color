@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import silin.color.object.Color;
@@ -122,19 +123,6 @@ public class ColorListFragment extends Fragment implements AbsListView.OnItemCli
     }
 
     /**
-     * The default content for this Fragment has a TextView that is shown when
-     * the list is empty. If you would like to change the text, call this method
-     * to supply the text it should use.
-     */
-    public void setEmptyText(CharSequence emptyText) {
-        View emptyView = mListView.getEmptyView();
-
-        if (emptyText instanceof TextView) {
-            ((TextView) emptyView).setText(emptyText);
-        }
-    }
-
-    /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
@@ -148,5 +136,4 @@ public class ColorListFragment extends Fragment implements AbsListView.OnItemCli
         // TODO: Update argument type and name
         public void onColorItemSelected(int position);
     }
-
 }

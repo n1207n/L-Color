@@ -12,7 +12,6 @@
         android:choiceMode="singleChoice" />
 
     <ImageButton
-        android:contentDescription="@string/add_ib_content_description"
         android:id="@+id/add_ib"
         android:layout_width="@dimen/floating_button_size"
         android:layout_height="@dimen/floating_button_size"
@@ -20,6 +19,8 @@
         android:layout_marginBottom="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/add_ripple"
+        android:contentDescription="@string/add_ib_content_description"
+        android:onClick="show_add_card_view"
         android:padding="10dp"
         android:scaleType="fitCenter"
         android:src="@drawable/add" />
@@ -34,7 +35,7 @@
         android:layout_marginRight="16dp"
         android:elevation="4dp"
         android:theme="@style/CardView.Light"
-        android:visibility="visible"
+        android:visibility="invisible"
         card_view:cardCornerRadius="2dp">
 
         <RelativeLayout
