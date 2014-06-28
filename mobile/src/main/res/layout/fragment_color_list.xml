@@ -20,7 +20,7 @@
         android:layout_marginRight="16dp"
         android:background="@drawable/add_ripple"
         android:contentDescription="@string/add_ib_content_description"
-        android:onClick="show_add_card_view"
+        android:onClick="toggle_add_card_view"
         android:padding="10dp"
         android:scaleType="fitCenter"
         android:src="@drawable/add" />

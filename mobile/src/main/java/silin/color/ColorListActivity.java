@@ -1,11 +1,19 @@
 package silin.color;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.view.ViewAnimationUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+import android.widget.ViewAnimator;
 
 import silin.color.object.Color;
 
@@ -49,7 +57,44 @@ public class ColorListActivity extends Activity implements ColorListFragment.OnF
         Toast.makeText(this, Color.ITEMS.get(position).content, Toast.LENGTH_SHORT).show();
     }
 
-    public void show_add_card_view(View view) {
-        Toast.makeText(this, "Add buttom is clicked", Toast.LENGTH_SHORT).show();
+    public void toggle_add_card_view(View view) {
+        // Get the CardView from ImageButton's ViewParent after casting to View
+        final CardView add_cv = (CardView) ((View) view.getParent()).findViewById(R.id.add_cv);
+
+        // Get the center x & y for the circular reveal effect to happen
+        int revealCenterX = (add_cv.getLeft() + add_cv.getRight()) / 2,
+                revealCenterY = (add_cv.getTop() + add_cv.getBottom()) / 2;
+
+        // Get the radius for the circular reveal effect
+        int revealRadius = add_cv.getWidth();
+
+        // Create an animator
+        ValueAnimator animator;
+
+        // If the CardView is invisible
+        if (add_cv.getVisibility() == View.INVISIBLE) {
+            // Make it visible
+            add_cv.setVisibility(View.VISIBLE);
+
+            // Create a reveal animator to reveal this
+            animator = ViewAnimationUtils.createCircularReveal(add_cv, revealCenterX, revealCenterY, 0, revealRadius);
+        }
+
+        // Otherwise
+        else {
+            // Create a reveal animator to hide it with the reveal effect
+            animator = ViewAnimationUtils.createCircularReveal(add_cv, revealCenterX, revealCenterY, revealRadius, 0);
+
+            // Add a listener to hide the CardView when the animation is finished
+            animator.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    add_cv.setVisibility(View.INVISIBLE);
+                }
+            });
+        }
+
+        // Animate!
+        animator.start();
     }
 }
