@@ -6,7 +6,7 @@
         <shape android:shape="oval">
             <solid android:color="@color/primaryAccentLightColor"/>
             <size android:height="@dimen/floating_button_size"
-                android:width="@dimen/floating_button_size"></size>
+                android:width="@dimen/floating_button_size"/>
         </shape>
     </item>
 </ripple>

@@ -14,17 +14,17 @@ import java.util.Map;
 public class Color {
 
     /**
-     * An array of sample (dummy) items.
+     * An array of ColorItem.
      */
     public static List<ColorItem> ITEMS = new ArrayList<ColorItem>();
 
     /**
-     * A map of sample (dummy) items, by ID.
+     * A map of ColorItem by ID.
      */
     public static Map<String, ColorItem> ITEM_MAP = new HashMap<String, ColorItem>();
 
     static {
-        // Add 3 sample items.
+        // Add 4 sample items.
         addItem(new ColorItem("1", "Red"));
         addItem(new ColorItem("2", "Yellow"));
         addItem(new ColorItem("3", "Green"));
@@ -36,9 +36,7 @@ public class Color {
         ITEM_MAP.put(item.id, item);
     }
 
-    /**
-     * A dummy item representing a piece of content.
-     */
+    // ColorItem Object
     public static class ColorItem {
         public String id;
         public String content;

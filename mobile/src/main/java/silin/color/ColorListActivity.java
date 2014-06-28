@@ -15,13 +15,13 @@ public class ColorListActivity extends Activity implements ColorListFragment.OnF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_list);
 
+        // Get the ColorListFragment class to start with
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
                                 .add(R.id.container, new ColorListFragment())
                                 .commit();
         }
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -44,6 +44,7 @@ public class ColorListActivity extends Activity implements ColorListFragment.OnF
 
     @Override
     public void onColorItemSelected(int position) {
+        // Toast the content for now
         Toast.makeText(this, Color.ITEMS.get(position).content, Toast.LENGTH_SHORT).show();
     }
 }

@@ -6,5 +6,8 @@
     <item name="primaryAccentLightColor" type="color">#80d8ff</item>
     <item name="primaryAccentColor" type="color">#40c4ff</item>
     <item name="primaryAccentDarkColor" type="color">#00b0ff</item>
+
+    <item name="secondaryColor" type="color">#009688</item>
+
     <item name="backgroundColor" type="color">#FFE8FAFF</item>
 </resources>
