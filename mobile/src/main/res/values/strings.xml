@@ -8,5 +8,6 @@
     <string name="add_cv_title_tv">Add new color</string>
     <string name="add_ib_content_description">A button for adding new ColorItem object</string>
     <string name="add_cv_title_et_hint">Type your color</string>
+    <string name="ok">OK</string>
 
 </resources>

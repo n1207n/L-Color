@@ -2,25 +2,22 @@ package silin.color;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
-import android.view.ViewAnimationUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.ScaleAnimation;
+import android.view.ViewAnimationUtils;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
-import android.widget.ViewAnimator;
 
 import silin.color.object.Color;
 
 public class ColorListActivity extends Activity implements ColorListFragment.OnFragmentInteractionListener {
+    private ColorListFragment colorListFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +26,11 @@ public class ColorListActivity extends Activity implements ColorListFragment.OnF
 
         // Get the ColorListFragment class to start with
         if (savedInstanceState == null) {
+            colorListFragment = new ColorListFragment();
+
             getFragmentManager().beginTransaction()
-                                .add(R.id.container, new ColorListFragment())
-                                .commit();
+                    .add(R.id.container, colorListFragment)
+                    .commit();
         }
     }
 
@@ -78,9 +77,6 @@ public class ColorListActivity extends Activity implements ColorListFragment.OnF
         if (add_cv.getVisibility() == View.INVISIBLE) {
             // Make it visible
             add_cv.setVisibility(View.VISIBLE);
-
-//            Animation animation = AnimationUtils.
-
 
             // Create a reveal animator to reveal this
             animator = ViewAnimationUtils.createCircularReveal(add_cv, revealCenterX, revealCenterY, 0, revealRadius);

@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,6 +51,9 @@ public class ColorListFragment extends Fragment implements AbsListView.OnItemCli
      * Views.
      */
     private ListAdapter mAdapter;
+
+    private Button add_cv_add_b;
+    private ImageButton add_ib;
 
     // TODO: Rename and change types of parameters
     public static ColorListFragment newInstance(String param1, String param2) {
@@ -91,6 +97,30 @@ public class ColorListFragment extends Fragment implements AbsListView.OnItemCli
 
         // Set OnItemClickListener so we can be notified on item clicks
         mListView.setOnItemClickListener(this);
+
+        add_ib = (ImageButton) view.findViewById(R.id.add_ib);
+
+        add_cv_add_b = (Button) view.findViewById(R.id.add_cv_add_b);
+        add_cv_add_b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText add_cv_title_et = (EditText) ((View) v.getParent()).findViewById(R.id.add_cv_title_et);
+
+                if (!add_cv_title_et.getText().toString().equals("")) {
+                    Color.ColorItem newColorItem = new Color.ColorItem(String.valueOf(Color.ITEMS.size()), add_cv_title_et.getText().toString());
+                    Color.addItem(newColorItem);
+
+                    Toast.makeText(getActivity(), newColorItem + " added", Toast.LENGTH_SHORT).show();
+                    add_ib.callOnClick();
+                }
+
+                else {
+                    Toast.makeText(getActivity(), "Please enter a title", Toast.LENGTH_SHORT).show();
+                }
+
+                add_cv_title_et.setText("");
+            }
+        });
 
         return view;
     }

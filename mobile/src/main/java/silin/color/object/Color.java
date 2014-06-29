@@ -31,7 +31,7 @@ public class Color {
         addItem(new ColorItem("4", "Blue"));
     }
 
-    private static void addItem(ColorItem item) {
+    public static void addItem(ColorItem item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.id, item);
     }

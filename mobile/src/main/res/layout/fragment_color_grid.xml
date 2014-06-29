@@ -49,6 +49,16 @@
                 android:textColor="@color/secondaryColor"
                 android:textColorHint="@color/secondaryColor" />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ok"
+                android:id="@+id/add_cv_add_b"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/add_cv_title_et"
+                android:layout_marginBottom="15dp"
+                android:stateListAnimator="@drawable/floating_button_elevate"/>
+
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
